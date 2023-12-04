@@ -38,6 +38,12 @@ http://127.0.0.1:8000/admin
 View the application in your browser and add and remove items to and from the cart. Place an order
 http://127.0.0.1:8000
 
+Project Organization:
+1. 'myshop' is the main project app
+2. 'orders' and 'shop' are apps created as part of this project
+3. 'cart' is the shopping cart managed through Django sessions.
+4. The 'products' and ''media/products' folders contain product images added to the database
+
 If an Error occurs when installing Pillow:
 To use Pillow with Python 3.8.x - upgrade pip to the most recent version (20.x)
 easy_install -U pip

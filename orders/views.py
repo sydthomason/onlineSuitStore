@@ -38,7 +38,6 @@ def order_create(request):
             request.session['order_id'] = order.id
 
             return render(request, 'orders/order/created.html', {'order_id':order.id})
-
     else:
         form = OrderCreateForm()
     return render(request,
