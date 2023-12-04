@@ -10,3 +10,6 @@ local_settings.py
 **/migrations/**
 !**/migrations
 !**/migrations/__init__.py
+# ignore the files created for products added to the database
+media
+products
