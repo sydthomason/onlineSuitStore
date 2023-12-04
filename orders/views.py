@@ -5,7 +5,7 @@ from .forms import OrderCreateForm
 from cart.cart import Cart
 from django.contrib.admin.views.decorators import staff_member_required
 from django.shortcuts import get_object_or_404
-from .models import Order
+from .models import Order, Product
 from django.conf import settings
 from django.http import HttpResponse
 from django.template.loader import render_to_string
@@ -29,6 +29,9 @@ def order_create(request):
                                          product=item['product'],
                                          price=item['price'],
                                          quantity=item['quantity'])
+                #reduce the number of items in inventory based on this sale
+                item['product'].quantity = item['product'].quantity - item['quantity']
+                item['product'].save()
             # clear the cart
             cart.clear()
             # set the order in the session
