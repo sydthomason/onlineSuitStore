@@ -4,6 +4,7 @@ from shop.models import Product
 from .cart import Cart
 from .forms import CartAddProductForm
 
+
 @require_POST
 def cart_add(request, product_id):
     cart = Cart(request)
@@ -16,20 +17,23 @@ def cart_add(request, product_id):
                  update_quantity=cd['update'])
     return redirect('cart:cart_detail')
 
+
 def cart_remove(request, product_id):
     cart = Cart(request)
     product = get_object_or_404(Product, id=product_id)
     cart.remove(product)
     return redirect('cart:cart_detail')
 
+
 def cart_detail(request):
     cart = Cart(request)
     for item in cart:
-            product = get_object_or_404(Product, id=item['product'].id)
-            #limit the 'update' quantity choices based on quantity in inventory
-            choices = [(i, str(i)) for i in range(1, product.quantity + 1)]
-            item['update_quantity_form'] = CartAddProductForm(
-                my_choices=choices,
-                initial={'quantity': item['quantity'],
-                'update': True})
+        product = get_object_or_404(Product, id=item['product'].id)
+        # limit the 'update' quantity choices based on quantity in inventory
+        choices = [(i, str(i)) for i in range(1, product.quantity + 1)]
+
+        item['update_quantity_form'] = CartAddProductForm(
+            my_choices=choices,
+            initial={'quantity': item['quantity'],
+                     'update': True})
     return render(request, 'cart/detail.html', {'cart': cart})
