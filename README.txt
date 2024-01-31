@@ -4,7 +4,9 @@ version of this application for your reference. This version is simpler than the
 The shopping cart has specific items defined in the settings.py file. Be sure to view the file and search for
 references to 'cart'.
 
-This version is updated to work with Django 4.0.2 and Python 3.9.
+This version is updated to work with Django 5 and Python 3.11 and implements product inventory.
+The number of items that can be added to the cart is based on the number in inventory.
+See the 'cart/forms.py'
 
 This application was created as a sample by Dr. George Royce for the ISQA Web Application Development Course
 
