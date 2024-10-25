@@ -6,22 +6,41 @@ body {
     font-family:helvetica, sans-serif; 
 }
 
-h1, h2, h3, h4, h5 , h6 { 
+h1 {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 1000; /* Extra bold */
+    font-size: 4rem;  /* Increase the font size */
+    text-transform: uppercase; /* Optional: Make the text uppercase */
+    letter-spacing: 3px; /* Increase spacing between letters */
+    margin-bottom: 10px;
+    color: #333; /* Darker color for better contrast */
+}
+
+h2 {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 900; /* Bold font */
+    font-size: 2rem; /* Ensures the size remains unchanged */
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+h3, h4, h5 , h6 {
     font-family: 'Ubuntu', sans-serif; font-weight:normal;
 }
 
 a {
     text-decoration:none;
-    color:#5993bb;
+    color:#000;
 }
 
 a:hover {
-    color:#77b6e2;
+    color:#000;
 }
 
 a.button, input[type="submit"] {
     color:#fff;
-    background:#5993bb;
+    background:#000;
     border-radius:4px;
     padding:10px 20px;
     font-size:14px;
@@ -59,7 +78,7 @@ tbody tr:nth-child(odd) {
 }
 
 thead th, tbody tr.total {
-    background:#5993bb;
+    background:#000;
     color:#fff;
     font-weight:bold;
 }
@@ -119,8 +138,8 @@ ul.errorlist {
 }
 
 #subheader {
-    background:#ececec;
-    color:#444;
+    background:#000;
+    color: #fff;
     padding:15px 100px;
     overflow:auto;
 }
@@ -165,7 +184,7 @@ ul.errorlist {
 }
 
 #sidebar ul li.selected {
-    background:#5993bb;
+    background:#000;
     border-radius:4px;
 }
 
@@ -227,11 +246,11 @@ ul.errorlist {
     background:#efefef;
     padding:10px 20px;
     color:#333;
-    border-bottom:4px solid #5993bb;
+    border-bottom:4px solid #000;
 }
 
 .order-info h3 {
-    color:#5993bb;
+    color:#000;
 }
 
 .order-info ul li {
