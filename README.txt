@@ -1,14 +1,8 @@
-This application creates a very simple online retail store.
-The application uses Django 'sessions' to manage the cart. The Django 4.0 by example textbook also includes a
-version of this application for your reference. This version is simpler than the version detailed in the textbook, however.
-The shopping cart has specific items defined in the settings.py file. Be sure to view the file and search for
-references to 'cart'.
+This application creates a very simple online suit store.
 
 This version is updated to work with Django 5 and Python 3.11 and implements product inventory.
-The number of items that can be added to the cart is based on the number in inventory.
-See the 'cart/forms.py'
 
-This application was created as a sample by Dr. George Royce for the ISQA Web Application Development Course
+This application was forked from the example store, and updated by Group 4 (Sydney, Derek, Erich, and Amy). 
 
 To use this application:
 Start PyCharm and close any projects
