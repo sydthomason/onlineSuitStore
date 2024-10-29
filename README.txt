@@ -34,7 +34,7 @@ Create a superuser with your personal credentials:
 Run the application server by entering the following command in the Terminal window:
 python manage.py runserver
 
-Run the server as Admin to add new Categories and Products to the database.
+Run the server as Admin to add new Collections and Products to the database.
 http://127.0.0.1:8000/admin
 
 View the application in your browser and add and remove items to and from the cart. Place an order

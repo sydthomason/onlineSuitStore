@@ -5208,14 +5208,14 @@ function fixInput( src, dest ) {
 	}
 }
 
-function domManip( collection, args, callback, ignored ) {
+function domManip( category, args, callback, ignored ) {
 
 	// Flatten any nested arrays
 	args = concat.apply( [], args );
 
 	var fragment, first, scripts, hasScripts, node, doc,
 		i = 0,
-		l = collection.length,
+		l = category.length,
 		iNoClone = l - 1,
 		value = args[ 0 ],
 		isFunction = jQuery.isFunction( value );
@@ -5224,8 +5224,8 @@ function domManip( collection, args, callback, ignored ) {
 	if ( isFunction ||
 			( l > 1 && typeof value === "string" &&
 				!support.checkClone && rchecked.test( value ) ) ) {
-		return collection.each( function( index ) {
-			var self = collection.eq( index );
+		return category.each( function( index ) {
+			var self = category.eq( index );
 			if ( isFunction ) {
 				args[ 0 ] = value.call( this, index, self.html() );
 			}
@@ -5234,7 +5234,7 @@ function domManip( collection, args, callback, ignored ) {
 	}
 
 	if ( l ) {
-		fragment = buildFragment( args, collection[ 0 ].ownerDocument, false, collection, ignored );
+		fragment = buildFragment( args, category[ 0 ].ownerDocument, false, category, ignored );
 		first = fragment.firstChild;
 
 		if ( fragment.childNodes.length === 1 ) {
@@ -5264,7 +5264,7 @@ function domManip( collection, args, callback, ignored ) {
 					}
 				}
 
-				callback.call( collection[ i ], node, i );
+				callback.call( category[ i ], node, i );
 			}
 
 			if ( hasScripts ) {
@@ -5295,7 +5295,7 @@ function domManip( collection, args, callback, ignored ) {
 		}
 	}
 
-	return collection;
+	return category;
 }
 
 function remove( elem, selector, keepData ) {
@@ -6504,11 +6504,11 @@ function genFx( type, includeWidth ) {
 
 function createTween( value, prop, animation ) {
 	var tween,
-		collection = ( Animation.tweeners[ prop ] || [] ).concat( Animation.tweeners[ "*" ] ),
+		category = ( Animation.tweeners[ prop ] || [] ).concat( Animation.tweeners[ "*" ] ),
 		index = 0,
-		length = collection.length;
+		length = category.length;
 	for ( ; index < length; index++ ) {
-		if ( ( tween = collection[ index ].call( animation, prop, value ) ) ) {
+		if ( ( tween = category[ index ].call( animation, prop, value ) ) ) {
 
 			// We're done with this property
 			return tween;

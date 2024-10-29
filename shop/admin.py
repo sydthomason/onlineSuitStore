@@ -2,6 +2,8 @@ from django.contrib import admin
 
 # Register your models here.
 from django.contrib import admin
+
+from cart.models import Category
 from .models import Category, Product
 
 

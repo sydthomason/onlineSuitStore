@@ -23,10 +23,12 @@ h2 {
     margin-top: 20px;
     margin-bottom: 10px;
     color: #333;
+    text-transform: uppercase;
 }
 
 h3, h4, h5 , h6 {
     font-family: 'Ubuntu', sans-serif; font-weight:normal;
+    text-transform: uppercase;
 }
 
 a {
