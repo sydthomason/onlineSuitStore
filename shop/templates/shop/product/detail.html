@@ -9,7 +9,7 @@
     <div class="product-detail">
         <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static "img/no_image.png" %}{% endif %}">
         <h2>{{ product.name }}</h2>
-        <h3><a href="{{ product.category.get_absolute_url }}">{{ product.category }}</a></h3>
+        <h3><a href="{{ product.collection.get_absolute_url }}">{{ product.collection }}</a></h3>  <!-- Changed category to collection -->
         <p class="price">${{ product.price }}</p>
         <form action="{% url "cart:cart_add" product.id %}" method="post">
             {{ cart_product_form }}
@@ -20,7 +20,6 @@
     </div>
     <br>
     <div>
-
         <a href="{% url "shop:product_list" %}" class="button light">Continue shopping</a>
     </div>
 {% endblock %}
